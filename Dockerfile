@@ -3,7 +3,7 @@ FROM registry.access.redhat.com/ubi8/ubi-minimal:8.4
 
 LABEL maintainer="TychoDev <cloud.ops@tychodev.com>"
 
-ENV NODJS_VERSION=14 \
+ENV NODEJS_VERSION=14 \
     PATH=$HOME/.local/bin/:$PATH \
     npm_config_loglevel=warn \
     npm_config_unsafe_perm=true
