@@ -11,7 +11,7 @@ ENV NODEJS_VERSION=14 \
 # MicroDNF is recommended over YUM for Building Container Images
 # https://www.redhat.com/en/blog/introducing-red-hat-enterprise-linux-atomic-base-image
 
-RUN microdnf update \
+RUN microdnf update -y \
     && microdnf module enable nodejs:14 \
     && microdnf install -y nodejs \
     && microdnf install -y npm \
