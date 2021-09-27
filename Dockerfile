@@ -12,7 +12,8 @@ ENV NODJS_VERSION=14 \
 # https://www.redhat.com/en/blog/introducing-red-hat-enterprise-linux-atomic-base-image
 
 RUN microdnf update \
-    && microdnf install -y nodejs:14 \
+    && microdnf module enable nodejs:14 \
+    && microdnf install -y nodejs \
     && microdnf install -y npm \
     && microdnf install -y nodejs-nodemon \
     && microdnf clean all \
