@@ -1,2 +1,2 @@
-# ubi8-nodejs
+# ubi-nodejs
 
