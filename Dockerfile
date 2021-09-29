@@ -20,7 +20,7 @@ RUN microdnf update -y \
     && rm -rf /var/cache/* /var/log/dnf* /var/log/yum.*
 
 #USER 1001
-
-RUN node --version && npm --version
+RUN npm install --global yarn
+RUN node --version && npm --version && yarn --version
 
 CMD ["echo", "This is a 'Purpose Built Image', It is not meant to be ran directly"]
