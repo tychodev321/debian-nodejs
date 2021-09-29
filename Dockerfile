@@ -15,7 +15,6 @@ RUN microdnf update -y \
     && microdnf module enable nodejs:14 \
     && microdnf install -y nodejs \
     && microdnf install -y npm \
-    && microdnf install -y nodejs-nodemon \
     && microdnf clean all \
     && rm -rf /var/cache/* /var/log/dnf* /var/log/yum.*
 
