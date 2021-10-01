@@ -21,6 +21,6 @@ RUN microdnf update -y \
 RUN npm install --global yarn
 RUN node --version && npm --version && yarn --version
 
-USER 1001
+# USER 1001
 
 CMD ["echo", "This is a 'Purpose Built Image', It is not meant to be ran directly"]
