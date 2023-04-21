@@ -11,7 +11,8 @@ ENV NODEJS_VERSION=18.16.0 \
 
 # Install Node and NPM
 RUN apt update -y && apt upgrade -y \
-    && apt install -y nodejs \
+    && curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
+    && apt install -y nodejs=${NODEJS_VERSION}  \
     && apt install -y npm \
     && apt clean -y \
     && rm -rf /var/lib/apt/lists/*
