@@ -1,4 +1,5 @@
-FROM ubuntu:22.10
+# https://hub.docker.com/_/node/
+FROM node:18.16.0-slim
 
 LABEL maintainer=""
 
@@ -8,25 +9,6 @@ ENV NODEJS_VERSION=18.16.0 \
     PATH=$HOME/.local/bin/:$PATH \
     npm_config_loglevel=warn \
     npm_config_unsafe_perm=true
-
-# Install Base Tools
-RUN apt update -y && apt upgrade -y \
-    && apt install -y unzip \
-    && apt install -y gzip \
-    && apt install -y tar \
-    && apt install -y wget \
-    && apt install -y curl \
-    && apt install -y sudo \
-    && apt clean -y \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install Node and NPM
-RUN apt update -y && apt upgrade -y \
-    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
-    && apt install -y nodejs \
-    && apt install -y npm \
-    && apt clean -y \
-    && rm -rf /var/lib/apt/lists/*
 
 # Install Yarn
 RUN npm install --global yarn@${YARN_VERSION} \
